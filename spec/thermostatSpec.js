@@ -13,6 +13,7 @@ describe('Thermostat', function() {
   });
 
   it('increases the temperature when you use the up function', function() {
+    thermostat.powerSavingOn();
     thermostat.up();
     expect(thermostat.temperature).toEqual(21);
   });
@@ -28,6 +29,31 @@ describe('Thermostat', function() {
     }
 
     expect(thermostat.temperature).toEqual(10);
+  });
+
+  it('thermostat has a power saving mode', function() {
+    expect(thermostat._powerSavingMode).toEqual(false);
+  });
+
+  it('can have power saving mode turned on', function() {
+    thermostat.powerSavingOn();
+    expect(thermostat._powerSavingMode).toEqual(true);
+  });
+
+  it('can have power saving mode turned off', function() {
+    thermostat.powerSavingOn();
+    thermostat.powerSavingOff();
+    expect(thermostat._powerSavingMode).toEqual(false);
+  });
+
+  it('has a max temperature of 25 when power mode on', function() {
+    thermostat.powerSavingOn();
+
+    for(let i = 0; i < 6; i++) {
+      thermostat.up();
+    }
+
+    expect(thermostat.temperature).toEqual(25);
   });
 
 });
