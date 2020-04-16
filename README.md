@@ -13,4 +13,3 @@
 - [X] Create HTML Elements
 - [X] Use JQuery to implement JavaScript on HTML
 - [X] (In the challenges where we add an interface, low-usage will be indicated with green, medium-usage indicated with black, high-usage indicated with red.)
-    - > NEED CSS FILE

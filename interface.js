@@ -31,13 +31,7 @@ $(document).ready(function() {
 
   function updateTemperature() {
     $('#temperature').text(thermostat.getTemperature());
-    if(thermostat.getUsage() === 'Low') {
-      $('#temperature').css('color', 'green')
-    } else if(thermostat.getUsage() === 'Medium') {
-      $('#temperature').css('color', 'black')
-    } else {
-      $('#temperature').css('color', 'red')
-    }
+    $('#temperature').attr('class', thermostat.getUsage());
   }
 
 });
