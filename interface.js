@@ -1,5 +1,6 @@
 $(document).ready(function() {
-  var api_url = "http://api.openweathermap.org/data/2.5/weather?q=london&appid=eb6ae52da19175e8885ca553f8c4f3e7"
+  var apiUrl = "http://api.openweathermap.org/data/2.5/weather?q="
+  var apiPart2 = "&appid=eb6ae52da19175e8885ca553f8c4f3e7"
   var thermostat = new Thermostat();
   updateTemperature();
 
@@ -30,12 +31,14 @@ $(document).ready(function() {
     updateTemperature();
   })
 
-  $('#get-weather').click(function() {
-    getWeather();
+  $('#get-weather').submit(function(event) {
+    event.preventDefault();
+    var currentCity = $('#city').val()
+    getWeather(currentCity);
   })
 
-  function getWeather() {
-    $.get(api_url, function(data){
+  function getWeather(city) {
+    $.get(apiUrl + city + apiPart2, function(data){
       $('#weather').text("Weather is " + data.weather[0].description );
     });
   }
