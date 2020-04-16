@@ -10,3 +10,9 @@
   color: red;
 }
 
+#temperature {
+  font-size: 72px;
+}
+* {
+  text-align: right;
+}
