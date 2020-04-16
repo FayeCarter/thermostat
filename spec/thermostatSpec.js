@@ -9,18 +9,18 @@ describe('Thermostat', function() {
   });
   
   it('temperature starts at 20 degrees', function() {
-    expect(thermostat.temperature).toEqual(20);
+    expect(thermostat.getTemperature()).toEqual(20);
   });
 
   it('increases the temperature when you use the up function', function() {
     thermostat.powerSavingOn();
     thermostat.up();
-    expect(thermostat.temperature).toEqual(21);
+    expect(thermostat.getTemperature()).toEqual(21);
   });
 
   it('decreases the temperature when you use the down function', function() {
     thermostat.down();
-    expect(thermostat.temperature).toEqual(19);
+    expect(thermostat.getTemperature()).toEqual(19);
   });
 
   it('wont go below the minimum temperature of 10 degrees', function() {
@@ -28,32 +28,63 @@ describe('Thermostat', function() {
       thermostat.down();
     }
 
-    expect(thermostat.temperature).toEqual(10);
-  });
-
-  it('thermostat has a power saving mode', function() {
-    expect(thermostat._powerSavingMode).toEqual(false);
+    expect(thermostat.getTemperature()).toEqual(10);
   });
 
   it('can have power saving mode turned on', function() {
     thermostat.powerSavingOn();
-    expect(thermostat._powerSavingMode).toEqual(true);
+    expect(thermostat.getPowerSaving()).toEqual(true);
   });
 
   it('can have power saving mode turned off', function() {
     thermostat.powerSavingOn();
     thermostat.powerSavingOff();
-    expect(thermostat._powerSavingMode).toEqual(false);
+    expect(thermostat.getPowerSaving()).toEqual(false);
   });
 
   it('has a max temperature of 25 when power mode on', function() {
     thermostat.powerSavingOn();
-
     for(let i = 0; i < 6; i++) {
       thermostat.up();
     }
-
-    expect(thermostat.temperature).toEqual(25);
+    expect(thermostat.getTemperature()).toEqual(25);
   });
+
+  it('has a max temperature of 32 when power mode off', function() {
+    thermostat.powerSavingOff();
+    for(let i = 0; i < 13; i++) {
+      thermostat.up();
+    }
+    expect(thermostat.getTemperature()).toEqual(32);
+  });
+
+  it('powerSavingMode is on as standard', function() {
+    expect(thermostat.getPowerSaving()).toEqual(true);
+  });
+
+  it('temperature can be reset to 20', function() {
+    thermostat.up();
+    thermostat.reset();
+    expect(thermostat.getTemperature()).toEqual(20);
+  });
+
+  it("can request thermostat's energy mode", function() {
+    expect(thermostat.getUsage()).toEqual('Medium');
+  });
+
+  it("Energy mode is High if temp > 25", function() {
+    for(let i = 0; i < 5; i++) {
+      thermostat.up();
+    }
+    expect(thermostat.getUsage()).toEqual('High');
+  });
+
+  it("Energy mode is Low if temp > 18", function() {
+    for(let i = 0; i < 3; i++) {
+      thermostat.down();
+    }
+    expect(thermostat.getUsage()).toEqual('Low');
+  });
+
 
 });
