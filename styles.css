@@ -42,17 +42,28 @@
   width: 30%;
   color: white;
   height:100%;
-  text-align: right;
+  text-align: center;
 }
 
 .sideways {
   writing-mode: vertical-lr;
   font-size: 10em;
-  height: 0em;
 }
 form {
   display: flex;
   flex-direction: column;
-
   text-align: right;
+  
+}
+
+.get-weather {
+  background: linear-gradient(to bottom right, #67ddc9, #3893df);
+  box-shadow: 0 8px 8px 0 #cacaca, 0 6px 20px 0 #cacaca;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  padding: 15px 45px 15px 45px;
+  text-align: center;
+  font-size: 16px;
+
 }
