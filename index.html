@@ -7,7 +7,35 @@
     <script src="interface.js"></script>
     <link href="styles.css" rel="stylesheet" type="text/css" />
   </head>
+
   <body>
+
+    <section id="thermometer">
+      <div id="tube">
+        <div id="mercury"></div>
+      </div>
+      <div id="bulb"></div>
+    </section>
+    <section id="controls">
+      <h1 id="temperature"></h1>
+      <button id="temp-up">+</button>
+      <button id="temp-down">-</button>
+      <button id="temp-reset">reset</button>
+      
+      <h2 id="power-saving-status">power saving on</h2>
+      <button id="powersaving-on">On</button>
+      <button id="powersaving-off">Off</button>
+  
+      <h2>Weather</h2>
+      <form id="get-weather">
+        <input id="city" type="text" name = "city" placeholder="enter city"></br>
+        <input class="get-weather" type="submit" value="Get Weather">        
+      </form>
+      <h3 id="weather"></h3>
+    </section>
+  </body>
+
+  <!-- <body>
     <section class="content">
       <section class="left">
         <h1 id="temperature">0</h1>
@@ -29,5 +57,5 @@
         <p class="sideways">degrees</p>
       </section>
     </section>
-  </body>
+  </body> -->
 </html>
