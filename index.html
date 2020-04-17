@@ -10,26 +10,56 @@
 
   <body>
 
-    <section id="thermometer">
-      <div id="tube">
-        <div id="mercury"></div>
+
+    <section id="graphic">
+
+      <div id="thermometer">
+        <div id="tube">
+          <div id="mercury"></div>
+        </div>
+        <div id="bulb"></div>
       </div>
-      <div id="bulb"></div>
+
+      <div id="markings">
+        <p>36</p>
+        <p>34</p>
+        <p>32</p>
+        <p>30</p>
+        <p>28</p>
+        <p>26</p>
+        <p>24</p>
+        <p>22</p>
+        <p>20</p>
+        <p>18</p>
+        <p>16</p>
+        <p>14</p>
+        <p>12</p>
+        <p>10</p>
+      </div>
+
     </section>
+
+
     <section id="controls">
-      <h1 id="temperature"></h1>
-      <button id="temp-up">+</button>
-      <button id="temp-down">-</button>
-      <button id="temp-reset">reset</button>
+      <h1><span id="temperature"></span>°C</h1>
+
+      <div class="button-group">
+
+        <button class="btn" id="temp-up">+</button>
+        <button class="btn" id="temp-down">-</button>
+        <button class="btn colspan2" id="temp-reset">reset</button>
+      </div>
       
       <h2 id="power-saving-status">power saving on</h2>
-      <button id="powersaving-on">On</button>
-      <button id="powersaving-off">Off</button>
+      <div class="button-group">
+        <button class="btn colspan2" id="powersaving-on">On</button>
+        <button class="btn colspan2" id="powersaving-off">Off</button>
+      </div>
   
       <h2>Weather</h2>
-      <form id="get-weather">
-        <input id="city" type="text" name = "city" placeholder="enter city"></br>
-        <input class="get-weather" type="submit" value="Get Weather">        
+      <form class="button-group" id="get-weather">
+        <input class="field colspan2" id="city" type="text" name = "city" placeholder="enter city">
+        <input class="get-weather btn colspan2" type="submit" value="Get Weather">        
       </form>
       <h3 id="weather"></h3>
     </section>
