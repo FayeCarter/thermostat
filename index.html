@@ -8,26 +8,26 @@
     <link href="styles.css" rel="stylesheet" type="text/css" />
   </head>
   <body>
-    <section id='content'>
+    <section class='content'>
       
       <h1 id="temperature">0</h1>
       <div class="dashboard">
-        <button id="temp-up">+</button>
-        <button id="temp-down">-</button>
-        <button id="temp-reset">reset</button>
-      <p>power saving mode is <span id="power-saving-status">on</span></p>
-          <button id="powersaving-on">PSM on</button><br>
-          <button id="powersaving-off">PSM off</button>
-          <!-- <button id="get-weather">Get Weather</button> -->
+        <p><span id="temp-up">+</span> <span id="temp-down">-</span> <span id="temp-reset">reset</span></p>
+        <p>power saving mode is <span id="power-saving-status">on</span></p>
+        <p id="powersaving-on">on</p>
+        <p id="powersaving-off">off</p>
           <div class="reporting">
             <form id="get-weather">
-              <input id="city" type="text" name = "city">
+              <label>Enter city</label></br>
+              <input id="city" type="text" name = "city"></br>
               <input type="submit" value="Get Weather">        
             </form>
             <p id="weather"></p>
           </div>
-    </div>
-      </p>
+      </div>
+    </section>
+    <section id="value">
+      <p class="sideways">degrees</p>
     </section>
   </body>
 </html>

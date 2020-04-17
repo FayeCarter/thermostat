@@ -1,18 +1,51 @@
 .Low {
-  color: green;
+  background-color: green;
 }
 
 .Medium {
-  color: black;
+  background-color: black;
 }
 
 .High{
-  color: red;
+  background-color: red;
 }
 
 #temperature {
   font-size: 72px;
 }
-* {
+html, body {
+  font-family: Helvetica;
+  margin: 0;
+  height: 100%;
+  color: rgb(49, 49, 49);
+  font-size: 25px;
+}
+
+body {
+  display: table;
+  width: 100%;
+}
+
+
+.content {
+  display: table-cell;
+  vertical-align: middle;
   text-align: right;
+  padding: 1em;
+  width: 70%;
+}
+
+#value {
+  margin:0;
+  padding:0;
+  display: table-cell;
+  vertical-align: middle;
+  width: 30%;
+  border-left: 5px solid black;
+  color: white;
+  font-size: 5em;
+}
+
+.sideways {
+  transform: rotate(90deg);
 }

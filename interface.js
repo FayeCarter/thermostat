@@ -45,7 +45,7 @@ $(document).ready(function() {
 
   function updateTemperature() {
     $('#temperature').text(thermostat.getTemperature());
-    $('#temperature').attr('class', thermostat.getUsage());
+    $('#value').attr('class', thermostat.getUsage());
   }
 
 });
