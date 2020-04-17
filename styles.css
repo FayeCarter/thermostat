@@ -1,51 +1,58 @@
 .Low {
-  background-color: green;
+  background: linear-gradient(to bottom, #aaffa9, #11ffbd);
 }
 
 .Medium {
-  background-color: black;
+  background: linear-gradient(to bottom, #67ddc9, #3893df);
 }
 
 .High{
-  background-color: red;
+  background: linear-gradient(to bottom, #f05f72, #a00721);
 }
 
 #temperature {
   font-size: 72px;
 }
-html, body {
+
+* {
   font-family: Helvetica;
-  margin: 0;
-  height: 100%;
+  margin: 0px;
+  padding: 0px
   color: rgb(49, 49, 49);
-  font-size: 25px;
+  font-size: 1em;
+  height: 100%;
+  box-sizing: border-box;
 }
-
-body {
-  display: table;
-  width: 100%;
-}
-
 
 .content {
-  display: table-cell;
-  vertical-align: middle;
-  text-align: right;
-  padding: 1em;
-  width: 70%;
+  display: flex;
 }
 
-#value {
-  margin:0;
-  padding:0;
-  display: table-cell;
-  vertical-align: middle;
+.left {
+  display: flex;
+  background: linear-gradient(to bottom, #f8f6ef, #d4d4d0);
+  padding: 15% 2%;
+  width: 70%;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+#right {
+  display: flex;
   width: 30%;
-  border-left: 5px solid black;
   color: white;
-  font-size: 5em;
+  height:100%;
+  text-align: right;
 }
 
 .sideways {
-  transform: rotate(90deg);
+  writing-mode: vertical-lr;
+  font-size: 10em;
+  height: 0em;
+}
+form {
+  display: flex;
+  flex-direction: column;
+
+  text-align: right;
 }

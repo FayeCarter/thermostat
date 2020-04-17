@@ -8,26 +8,26 @@
     <link href="styles.css" rel="stylesheet" type="text/css" />
   </head>
   <body>
-    <section class='content'>
-      
-      <h1 id="temperature">0</h1>
-      <div class="dashboard">
-        <p><span id="temp-up">+</span> <span id="temp-down">-</span> <span id="temp-reset">reset</span></p>
-        <p>power saving mode is <span id="power-saving-status">on</span></p>
-        <p id="powersaving-on">on</p>
-        <p id="powersaving-off">off</p>
-          <div class="reporting">
-            <form id="get-weather">
-              <label>Enter city</label></br>
-              <input id="city" type="text" name = "city"></br>
-              <input type="submit" value="Get Weather">        
-            </form>
-            <p id="weather"></p>
-          </div>
-      </div>
-    </section>
-    <section id="value">
-      <p class="sideways">degrees</p>
+    <section class="content">
+      <section class="left">
+        <h1 id="temperature">0</h1>
+      </br>
+        <p><span id="temp-up">+ </span>/<span id="temp-down"> -</span></p>
+        <p id="temp-reset">reset</p>
+      </br>
+        <p id="power-saving-status">power saving on</p>
+        <p><span id="powersaving-on">on </span>/ <span id="powersaving-off"> off</span></p>
+      </br>
+        <form id="get-weather">
+          <input id="city" type="text" name = "city" placeholder="enter city"></br>
+          <input type="submit" value="Get Weather">        
+        </form>
+        <p id="weather"></p>
+      </section>
+
+      <section id="right">
+        <p class="sideways">degrees</p>
+      </section>
     </section>
   </body>
 </html>
